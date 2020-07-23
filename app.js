@@ -38,3 +38,41 @@ console.log(A_THING);
 console.log(ANOTHER_THING);
 
 // Constructor Functions
+function User(name) {
+  this.name = name;
+}
+
+let adam = new User('Adam');
+let pete = new User('Pete');
+
+console.log(adam);
+console.log(pete.name);
+
+function NBAPlayer(name, team, threePointShooter) {
+  this.name = name;
+  this.team = team;
+  this.threePointShooter = threePointShooter;
+}
+
+let steph = new NBAPlayer("Steph Curry", "Warriors", true);
+let lebron = new NBAPlayer("Lebron James", "Lakers", true);
+
+console.log(steph);
+console.log(lebron);
+
+
+// make a constructor function
+// make 3 new variables with that constructor function
+
+function GeometricalFigure(shape, threeDimensional=true, physical=true) {
+  this.shape = shape;
+  this.threeDimensional = threeDimensional;
+  this.physical = physical;
+}
+
+let cube = new GeometricalFigure("cube");
+
+console.log(cube);
+
+
+
