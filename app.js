@@ -122,11 +122,11 @@ class GitHubProfile {
   }
 }
 
-fetch('https://api.github.com/users/subrataroy321')
+fetch('https://api.github.com/users/petefitton')
 .then(response => {
   return response.json()
 }).then(data => {
-  console.log(data);
+  // console.log(data);
   let githubURL = data.url;
   let githubName = data.name;
   let githubUsername = data.login;
@@ -135,3 +135,34 @@ fetch('https://api.github.com/users/subrataroy321')
   console.log(pete);
   console.log(pete.intro());
 })
+
+
+
+
+//Promises
+
+let isMomHappy = true;
+
+let willIGetNewPhone = new Promise(
+  function(resolve, reject) {
+    if (isMomHappy) {
+      isMomHappy = false
+      let phone = {
+        brand: 'Samsung',
+        color: 'black'
+      }
+      resolve(phone);
+      isMomHappy = false
+    } else {
+      var reason = new Error('mom is not happy');
+      reject(reason);
+    }
+  }
+);
+
+
+willIGetNewPhone.then(result => {
+  console.log(result);
+})
+
+
