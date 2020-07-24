@@ -166,3 +166,46 @@ willIGetNewPhone.then(result => {
 })
 
 
+
+
+// async await
+
+async function printUsers() {
+  const endpoint = 'https://jsonplaceholder.typicode.com/users';
+  let users = await fetch(endpoint).then(res => res.json());
+  console.log(users)
+}
+
+printUsers();
+
+async function printPete() {
+  const endpoint = 'https://api.github.com/users/petefitton';
+  let pete = await fetch(endpoint).then(res => res.json());
+  console.log(pete)
+}
+
+printPete();
+
+
+async function call() {
+  const url = 'https://api.kanye.rest';
+  let quote = await fetch(url).then(res=>res.json());
+  console.log(quote);
+}
+
+call();
+
+
+// set up fetch with await
+// grab login name
+// print login name
+
+async function printFacebook() {
+  let facebookEndpoint = 'https://api.github.com/users/facebook';
+  let call = await fetch(facebookEndpoint).then(res=>res.json());
+  console.log(call.login);
+  console.log("^^^^^^ call.login");
+}
+
+printFacebook();
+
